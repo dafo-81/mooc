@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom';
 import React, {useState} from 'react';
 
 const Button = ({onClick, text}) => {
@@ -57,4 +56,4 @@ const App = () => {
 	);
 }
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+export default App;

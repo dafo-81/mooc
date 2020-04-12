@@ -4,21 +4,53 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Osa 0 - Tehtävät</title>
-		<link rel="stylesheet" href="css/style.css">
+		<style>
+			body {
+				font: smaller sans-serif;
+				margin: auto;
+				text-align: justify;
+				width: 640px;
+			}
+		</style>
 	</head>
 	<body>
-		<h2>0.4: Uusi Muistiinpano</h2>
-		<p>Kun tallennusnappia painetaan, sivun lomake lähettää syötetyn tekstin POST metodilla palvelimelle osoitteeseen new_note, mikä on itseasiassa skripti.</p>
-		<p>Se tallentaa tekstin ja luomisajan taulukkoon, mutta mielestäni kuvauksesta puuttuu jotain.
-		En ihan täysin ymmärrä missä kohtaa syötetty teksti lisätään raakadatasta generoituun listaan.
-		Tallennetaanko taulukko ja raakadata johonkin tilapäiseen data.json tiedostoon?</p>
-		<p>Joka tapauksessa, skriptin ajon jälkeen, palvelin palauttaa selaimelle 302 Redirect tunnisteen mikä kertoo selaimelle että sen tulisi ladata vastausheaderin Location kentän välittämä osoite.</p>
+		<h2>Uusi Muistiinpano</h2>
+		<p>
+			Kun tallennusnappia painetaan, sivun lomake lähettää
+			syötetyn tekstin POST metodilla palvelimelle osoitteeseen
+			new_note, mikä on itseasiassa skripti.
+		</p>
+		<p>
+			Se tallentaa tekstin ja luomisajan taulukkoon, mutta
+			mielestäni kuvauksesta puuttuu jotain.
+			En ihan täysin ymmärrä missä kohtaa syötetty teksti lisätään
+			raakadatasta generoituun listaan.
+			Tallennetaanko taulukko ja raakadata johonkin tilapäiseen
+			data.json tiedostoon?
+		</p>
+		<p>
+			Joka tapauksessa, skriptin ajon jälkeen, palvelin palauttaa
+			selaimelle 302 Redirect tunnisteen mikä kertoo selaimelle
+			että sen tulisi ladata vastausheaderin Location kentän
+			välittämä osoite.
+		</p>
 		<img src="img/0401.png" alt="">
-		<p>Meidän tapauksessamme välitetty osoite on alkuperäinen sivu, joka siis latautuu uudestaan liitetiedostoineen GET metodilla.</p>
+		<p>
+			Meidän tapauksessamme välitetty osoite on alkuperäinen sivu,
+			joka siis latautuu uudestaan liitetiedostoineen GET
+			metodilla.
+		</p>
 		<img src="img/0402.png" alt="">
-		<p>Selaimessa suoritettavan JavaScriptin (main.js) tapahtumakäsittelijä käynnistyy koska sivun tila on muuttunut.</p>
+		<p>
+			Selaimessa suoritettavan JavaScriptin (main.js)
+			tapahtumakäsittelijä käynnistyy koska sivun tila on
+			muuttunut.
+		</p>
 		<img src="img/0403.png" alt="">
-		<p>Tapahtumakäsittelijä parsii JSON tiedoston ja generoi sen sisällöstä sivulle järjestämättömän listaelementin.</p>
+		<p>
+			Tapahtumakäsittelijä parsii JSON tiedoston ja generoi sen
+			sisällöstä sivulle järjestämättömän listaelementin.
+		</p>
 <pre>
 var xhttp = new XMLHttpRequest();
 
@@ -50,9 +82,9 @@ xhttp.onreadystatechange = function () {
 xhttp.open("GET", "/data.json", true);
 xhttp.send();
 </pre>
-	<h2>0.5: Single Page App</h2>
-	<img src="img/0501.png" alt="">
-	<h2>0.6: Uusi Muistiinpano</h2>
-	<img src="img/0601.png" alt="">
+		<h2>Single Page App</h2>
+		<img src="img/0501.png" alt="">
+		<h2>Uusi Muistiinpano</h2>
+		<img src="img/0601.png" alt="">
 	</body>
 </html>

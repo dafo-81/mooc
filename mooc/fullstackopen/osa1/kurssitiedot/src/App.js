@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom";
 import React from "react";
 
 const Content = ({parts}) => {
@@ -46,4 +45,4 @@ const App = () => {
 	);
 }
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+export default App;
