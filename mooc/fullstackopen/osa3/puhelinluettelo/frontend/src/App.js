@@ -36,10 +36,13 @@ const App = () => {
 			person.name.toLowerCase() === name.toLowerCase());
 		if (found && found.number === number) {
 			alert(`${name} already exists`);
-			setName("");
+			[setName, setNumber].forEach(set => set(""));
 			return;
 		}
 		if (found && window.confirm(`Change ${name}'s number?`)) {
+
+			return; /* TODO backend in exercise 3.17 */
+
 			const copy = {...found, number: number};
 			netDB.update(copy.id, copy).then(response => {
 				setPersons(persons.map(person =>

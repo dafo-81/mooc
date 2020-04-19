@@ -1,11 +1,12 @@
 const cors = require("cors");
 const express = require("express");
 const morgan = require("morgan");
-const port = 3001;
+const port = process.env.PORT || 3001;
 const server = express();
 
 server.use(cors());
 server.use(express.json());
+server.use(express.static("build"));
 
 morgan.token("pdata", (request, response) => {
 	if (request.method.toLowerCase() === "post") {
