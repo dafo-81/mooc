@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const url = process.env.PORT ? /* Running at Heroku? */
-	"/api/persons" : "http://localhost:3001/api/persons";
+const url = "/api/persons";
 
 const create = (object) => {
 	/*
